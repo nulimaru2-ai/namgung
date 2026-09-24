@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>남궁대학교 사립대학 부설 고등학교 (南宮高等學校) - 2019</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts (Noto Serif KR & Noto Sans KR) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800&family=Noto+Serif+KR:wght@600;700;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Noto Sans KR', 'sans-serif'],
+                        serif: ['Noto Serif KR', 'serif'],
+                    },
+                    colors: {
+                        noble: {
+                            navy: '#0F1E36',     // 깊은 왕실 네이비
+                            gold: '#C5A059',     // 품격 있는 클래식 골드
+                            goldhover: '#B38E46',
+                            green: '#0D3B2E',    // 고풍스러운 딥그린
+                            burgundy: '#581825', // 클래식 버건디 포인트
+                            cream: '#FDFBF7',    // 고급 바닐라 크림 배경
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #FDFBF7; }
+        .font-serif-kr { font-family: 'Noto Serif KR', serif; }
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: #f1f1f1; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #C5A059; border-radius: 4px; }
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #E5C378 0%, #C5A059 50%, #9A7B38 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-border-gradient {
+            border-image: linear-gradient(to right, #C5A059, #E5C378, #C5A059) 1;
+        }
+    </style>
+</head>
+<body class="bg-noble-cream text-slate-800 antialiased flex flex-col min-h-screen">
+
+    <div class="bg-noble-navy text-slate-300 text-xs py-2 px-4 border-b border-noble-gold/30">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <span class="inline-flex items-center text-noble-gold font-medium">
+                    <i class="fa-solid fa-landmark mr-1.5"></i> 1928년 창립 · 사학 명문 南宮學園
+                </span>
+                <span class="hidden md:inline-block text-slate-400">|</span>
+                <span class="hidden md:inline-block text-slate-300">
+                    <i class="fa-solid fa-calendar-day text-noble-gold mr-1.5"></i>2019년 9월 25일 수요일 (2019학년도 2학기)
+                </span>
+            </div>
+            <div class="flex items-center space-x-3 sm:space-x-4 text-xs">
+                <a href="#" onclick="openAuthModal('login')" class="hover:text-noble-gold transition flex items-center">
+                    <i class="fa-solid fa-right-to-bracket mr-1 text-noble-gold"></i>남궁 포털 로그인
+                </a>
+                <span class="text-slate-600">|</span>
+                <a href="#" onclick="openSchoolIntroModal()" class="hover:text-noble-gold transition">교훈 및 상징</a>
+            </div>
+        </div>
+    </div>
+
+    <header class="bg-white sticky top-0 z-40 shadow-md border-b-2 border-noble-gold">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-24">
+                
+                <!-- School Logo -->
+                <div class="flex items-center space-x-3.5 cursor-pointer" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+                    <div class="w-14 h-14 bg-noble-navy text-noble-gold rounded-full flex flex-col items-center justify-center font-serif-kr font-extrabold text-xl shadow-lg border-2 border-noble-gold">
+                        <span>南宮</span>
+                    </div>
+                    <div>
+                        <div class="flex items-center space-x-2">
+                            <span class="text-2xl font-black font-serif-kr text-noble-navy tracking-tight">남궁대학교 사립대학 부설 고등학교</span>
+                        </div>
+                        <span class="text-[11px] text-noble-gold font-bold tracking-widest uppercase block mt-0.5">Namgung University High School · 南宮高等學校</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation Menu -->
+                <nav class="hidden lg:flex space-x-1 xl:space-x-2 font-medium">
+                    <button onclick="openSchoolIntroModal()" class="px-3.5 py-2 rounded-lg text-slate-800 hover:text-noble-gold hover:bg-slate-50 transition flex items-center">
+                        학교소개 <i class="fa-solid fa-chevron-down text-[10px] ml-1.5 text-slate-400"></i>
+                    </button>
+                    <a href="#academic" class="px-3.5 py-2 rounded-lg text-slate-800 hover:text-noble-gold hover:bg-slate-50 transition flex items-center">
+                        학사안내
+                    </a>
+                    <a href="#achievements" class="px-3.5 py-2 rounded-lg text-noble-burgundy font-bold hover:text-noble-gold hover:bg-rose-50 transition flex items-center">
+                        <i class="fa-solid fa-award text-noble-gold mr-1.5"></i>진학실적(2019)
+                    </a>
+                    <a href="#notices" class="px-3.5 py-2 rounded-lg text-slate-800 hover:text-noble-gold hover:bg-slate-50 transition flex items-center">
+                        공지·통신문
+                    </a>
+                    <a href="#meal-calendar" class="px-3.5 py-2 rounded-lg text-slate-800 hover:text-noble-gold hover:bg-slate-50 transition flex items-center">
+                        학교생활/급식
+                    </a>
+                </nav>
+
+                <!-- Header Actions -->
+                <div class="flex items-center space-x-3">
+                    <a href="#achievements" class="hidden sm:inline-flex items-center justify-center px-4 py-2 text-xs font-bold text-noble-navy bg-noble-gold hover:bg-noble-goldhover text-white rounded-lg shadow transition border border-noble-gold">
+                        2019 입시성과 보고서
+                    </a>
+                    <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="lg:hidden p-2 rounded-lg text-slate-700 hover:bg-slate-100">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-3">
+            <div class="border-b border-slate-100 pb-2">
+                <a href="#" onclick="openSchoolIntroModal()" class="block font-bold text-slate-900 py-2">학교소개 (교훈/역사)</a>
+                <a href="#achievements" onclick="toggleMobileMenu()" class="block font-bold text-noble-burgundy py-2">2019 진학실적 및 명문 자랑</a>
+                <a href="#academic" onclick="toggleMobileMenu()" class="block font-bold text-slate-900 py-2">학사일정 (2019)</a>
+                <a href="#notices" onclick="toggleMobileMenu()" class="block font-bold text-slate-900 py-2">공지사항 & 가정통신문</a>
+                <a href="#meal-calendar" onclick="toggleMobileMenu()" class="block font-bold text-slate-900 py-2">오늘의 명품 급식</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="relative bg-noble-navy text-white overflow-hidden py-16 lg:py-20 border-b-4 border-noble-gold">
+        <div class="absolute inset-0 z-0 opacity-20 bg-[radial-gradient(#C5A059_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        <div class="absolute -right-20 -bottom-20 w-96 h-96 bg-noble-gold/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <!-- Left Headline -->
+            <div class="lg:col-span-7 space-y-6">
+                <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 bg-noble-gold/20 border border-noble-gold/40 text-noble-gold text-xs font-bold rounded-full">
+                    <i class="fa-solid fa-crown text-noble-gold"></i>
+                    <span>91년의 시대를 넘어 지성과 인격을 겸비한 리더의 요람</span>
+                </div>
+                <h1 class="text-3xl sm:text-5xl lg:text-5xl font-black font-serif-kr tracking-tight leading-tight text-white">
+                    학문의 깊이를 더하고<br>
+                    <span class="gold-gradient-text">세계를 주도하는 南宮인</span>
+                </h1>
+                <p class="text-slate-300 text-sm sm:text-base font-light leading-relaxed max-w-2xl">
+                    남궁대학교 사립대학 부설 고등학교는 1928년 창립 이래 최고의 학업 성취도와 남궁학원 특유의 전인 교육을 바탕으로 대한민국 사회 각계각층의 지도자를 배출해 온 사학 명문입니다.
+                </p>
+                <div class="pt-2 flex flex-wrap gap-4">
+                    <button onclick="openSchoolIntroModal()" class="px-6 py-3 bg-noble-gold hover:bg-noble-goldhover text-noble-navy font-extrabold text-sm rounded-xl shadow-lg transition flex items-center">
+                        <i class="fa-solid fa-university mr-2"></i> 학교 역사 및 상징
+                    </button>
+                    <a href="#achievements" class="px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold text-sm rounded-xl transition">
+                        2019 진학성과 상세
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Widget: 2019 Admission Highlights Card -->
+            <div class="lg:col-span-5 bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-noble-gold/40 shadow-2xl space-y-5">
+                <div class="flex justify-between items-center border-b border-noble-gold/30 pb-3">
+                    <div class="flex items-center space-x-2">
+                        <div class="w-3 h-3 rounded-full bg-noble-gold animate-pulse"></div>
+                        <h2 class="font-serif-kr font-bold text-lg text-noble-gold">2019학년도 대입 합격 현황</h2>
+                    </div>
+                    <span class="text-[11px] text-slate-300 font-mono">(2019.02 기준 최종)</span>
+                </div>
+
+                <div class="grid grid-cols-2 gap-3 text-center">
+                    <div class="bg-noble-navy/80 p-4 rounded-xl border border-noble-gold/30">
+                        <span class="text-xs text-slate-300 block mb-1 font-medium">서울대학교 합격</span>
+                        <span class="text-3xl font-black gold-gradient-text font-serif-kr">48명</span>
+                        <span class="text-[10px] text-slate-400 block mt-1">(수시 31명 / 정시 17명)</span>
+                    </div>
+                    <div class="bg-noble-navy/80 p-4 rounded-xl border border-noble-gold/30">
+                        <span class="text-xs text-slate-300 block mb-1 font-medium">의·치·한·약·수</span>
+                        <span class="text-3xl font-black text-emerald-400 font-serif-kr">72명</span>
+                        <span class="text-[10px] text-slate-400 block mt-1">(의예과 45명 포함)</span>
+                    </div>
+                    <div class="bg-noble-navy/80 p-4 rounded-xl border border-noble-gold/30">
+                        <span class="text-xs text-slate-300 block mb-1 font-medium">연세·고려대 합격</span>
+                        <span class="text-3xl font-black text-sky-300 font-serif-kr">112명</span>
+                        <span class="text-[10px] text-slate-400 block mt-1">인문·자연계열 통합</span>
+                    </div>
+                    <div class="bg-noble-navy/80 p-4 rounded-xl border border-noble-gold/30">
+                        <span class="text-xs text-slate-300 block mb-1 font-medium">해외 명문대 (아이비리그 등)</span>
+                        <span class="text-3xl font-black text-amber-300 font-serif-kr">15명</span>
+                        <span class="text-[10px] text-slate-400 block mt-1">하버드·MIT·옥스퍼드 등</span>
+                    </div>
+                </div>
+
+                <div class="text-center text-xs text-slate-300 bg-black/20 py-2 rounded-lg border border-white/5">
+                    <i class="fa-solid fa-graduation-cap text-noble-gold mr-1"></i> 전국 고등학교 진학 실적 최상위권 달성
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="achievements" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 w-full">
+        <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
+            <span class="text-xs font-bold text-noble-gold uppercase tracking-widest block">Excellence in Education</span>
+            <h2 class="text-3xl font-extrabold font-serif-kr text-noble-navy">2019학년도 진학 성과 및 명문 자랑</h2>
+            <div class="w-12 h-0.5 bg-noble-gold mx-auto"></div>
+            <p class="text-slate-600 text-sm">
+                지성적 탁월함과 창의적 탐구 역량을 겸비한 남궁고등학교 학생들의 자랑스러운 2019학년도 입시 결실입니다.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Card 1 -->
+            <div class="bg-white rounded-2xl p-7 shadow-sm border border-slate-200/80 hover:shadow-xl hover:border-noble-gold transition duration-300 flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 bg-amber-50 text-noble-gold rounded-xl flex items-center justify-center mb-4 text-xl border border-amber-200">
+                        <i class="fa-solid fa-building-columns"></i>
+                    </div>
+                    <h3 class="text-xl font-bold font-serif-kr text-noble-navy mb-2">서울대학교 및 주요대</h3>
+                    <p class="text-xs text-slate-500 leading-relaxed mb-4">
+                        최근 5년간 지속적인 수시 체제 구축과 깊이 있는 교과 탐구 활동을 통해 서울대 및 주요 상위권 대학에 압도적인 합격자를 배출했습니다.
+                    </p>
+                    <ul class="text-xs text-slate-700 space-y-2 border-t border-slate-100 pt-3">
+                        <li class="flex justify-between"><span>서울대학교:</span> <span class="font-bold text-noble-navy">48명</span></li>
+                        <li class="flex justify-between"><span>연세대학교 / 고려대학교:</span> <span class="font-bold text-noble-navy">112명</span></li>
+                        <li class="flex justify-between"><span>KAIST / POSTECH / GIST:</span> <span class="font-bold text-noble-navy">29명</span></li>
+                    </ul>
+                </div>
+                <div class="mt-6 pt-3 border-t border-slate-100 text-[11px] text-slate-400">
+                    2019학년도 수시/정시 합산 기준
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="bg-white rounded-2xl p-7 shadow-sm border border-slate-200/80 hover:shadow-xl hover:border-noble-gold transition duration-300 flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 bg-emerald-50 text-emerald-700 rounded-xl flex items-center justify-center mb-4 text-xl border border-emerald-200">
+                        <i class="fa-solid fa-user-doctor"></i>
+                    </div>
+                    <h3 class="text-xl font-bold font-serif-kr text-noble-navy mb-2">의·치·한·약·수 계열</h3>
+                    <p class="text-xs text-slate-500 leading-relaxed mb-4">
+                        첨단 과학 실험실 운영 및 의학 분야 심화 세미나를 통해 전국 최고의 메디컬 계열 합격 성과를 기록하고 있습니다.
+                    </p>
+                    <ul class="text-xs text-slate-700 space-y-2 border-t border-slate-100 pt-3">
+                        <li class="flex justify-between"><span>의예과 합격자:</span> <span class="font-bold text-emerald-700">45명</span></li>
+                        <li class="flex justify-between"><span>치의예 / 한의예 / 수의예:</span> <span class="font-bold text-emerald-700">27명</span></li>
+                        <li class="flex justify-between"><span>서울대 의예과 합격:</span> <span class="font-bold text-emerald-700">4명</span></li>
+                    </ul>
+                </div>
+                <div class="mt-6 pt-3 border-t border-slate-100 text-[11px] text-slate-400">
+                    2019학년도 전국 의학계열 진학률 최상위
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="bg-white rounded-2xl p-7 shadow-sm border border-slate-200/80 hover:shadow-xl hover:border-noble-gold transition duration-300 flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 bg-sky-50 text-sky-700 rounded-xl flex items-center justify-center mb-4 text-xl border border-sky-200">
+                        <i class="fa-solid fa-earth-americas"></i>
+                    </div>
+                    <h3 class="text-xl font-bold font-serif-kr text-noble-navy mb-2">글로벌 해외 명문대</h3>
+                    <p class="text-xs text-slate-500 leading-relaxed mb-4">
+                        글로벌 트랙 및 원어민 디베이트 과정을 통해 세계적 명문 대학으로 직접 진학하는 우수 인재를 양성합니다.
+                    </p>
+                    <ul class="text-xs text-slate-700 space-y-2 border-t border-slate-100 pt-3">
+                        <li class="flex justify-between"><span>Harvard / MIT / Stanford:</span> <span class="font-bold text-sky-700">5명</span></li>
+                        <li class="flex justify-between"><span>Oxford / Cambridge (영국):</span> <span class="font-bold text-sky-700">4명</span></li>
+                        <li class="flex justify-between"><span>UCLA / UC Berkeley:</span> <span class="font-bold text-sky-700">6명</span></li>
+                    </ul>
+                </div>
+                <div class="mt-6 pt-3 border-t border-slate-100 text-[11px] text-slate-400">
+                    2019 해외 대학 진학 트랙 수료자 전원 합격
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full space-y-12">
+        
+        <!-- Section: Notices & Letters -->
+        <section id="notices" class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            
+            <!-- Left 2 Cols: Tabbed Notices -->
+            <div class="lg:col-span-2 bg-white rounded-2xl p-6 shadow-sm border border-slate-200 flex flex-col justify-between">
+                <div>
+                    <!-- Tabs Header -->
+                    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-4">
+                        <div class="flex space-x-6">
+                            <button id="tab-공지" onclick="switchNoticeTab('공지')" class="text-lg font-bold font-serif-kr text-noble-navy border-b-2 border-noble-gold pb-2 transition flex items-center">
+                                <i class="fa-solid fa-bullhorn mr-2 text-noble-gold"></i>2019 공지사항
+                            </button>
+                            <button id="tab-통신문" onclick="switchNoticeTab('통신문')" class="text-lg font-bold font-serif-kr text-slate-400 hover:text-slate-700 pb-2 transition flex items-center">
+                                <i class="fa-solid fa-envelope-open-text mr-2"></i>2019 가정통신문
+                            </button>
+                        </div>
+                        <span class="text-xs text-slate-400">2019학년도 게시판</span>
+                    </div>
+
+                    <!-- Notice List Container -->
+                    <div id="notice-list-container" class="space-y-3">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+
+                <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+                    <span><i class="fa-solid fa-circle-info text-noble-gold mr-1"></i> 남궁학원 교무처 공식 등록 게시물입니다.</span>
+                    <span id="notice-count-badge" class="font-semibold text-slate-700">총 5건</span>
+                </div>
+            </div>
+
+            <!-- Right Col: Principal Letter & School Philosophy Card -->
+            <div class="space-y-6 flex flex-col">
+                <div class="bg-noble-navy text-white rounded-2xl p-6 shadow-md border border-noble-gold/30 flex-1 flex flex-col justify-between relative overflow-hidden">
+                    <div class="absolute -right-4 -bottom-4 opacity-5 text-white pointer-events-none">
+                        <i class="fa-solid fa-shield-halved text-9xl"></i>
+                    </div>
+                    <div>
+                        <span class="inline-block px-2.5 py-1 bg-noble-gold/20 text-noble-gold text-xs font-bold rounded-md mb-3 border border-noble-gold/30">
+                            교훈 (校訓)
+                        </span>
+                        <h3 class="text-2xl font-bold font-serif-kr gold-gradient-text mb-2">誠實 · 創義 · 踐行</h3>
+                        <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                            성실(誠實)하게 학문을 다스리고, 창의(創義)롭게 진리를 탐구하며, 바른 인격을 실천(踐行)하는 남궁인을 육성합니다.
+                        </p>
+                    </div>
+
+                    <div class="space-y-3 pt-4 border-t border-white/10">
+                        <div class="text-xs text-slate-300 flex items-center">
+                            <i class="fa-solid fa-user-tie text-noble-gold mr-2"></i>
+                            <span>제18대 학교장 남궁석(南宮碩) 박사</span>
+                        </div>
+                        <button onclick="openSchoolIntroModal()" class="w-full py-2.5 bg-noble-gold hover:bg-noble-goldhover text-noble-navy font-bold text-xs rounded-xl shadow transition text-center block">
+                            학교장 인사말 및 학교 역사 보기
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: 2019 Meals & Academic Calendar -->
+        <section id="meal-calendar" class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            
+            <!-- 2019 Today's Meal Widget -->
+            <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-center mb-6">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 bg-amber-50 text-noble-gold rounded-xl flex items-center justify-center border border-amber-200">
+                                <i class="fa-solid fa-utensils text-xl"></i>
+                            </div>
+                            <div>
+                                <h2 class="text-lg font-bold font-serif-kr text-noble-navy">2019 명품 영양 급식</h2>
+                                <p class="text-xs text-slate-500" id="current-date-display">2019년 9월 25일 (수)</p>
+                            </div>
+                        </div>
+                        <!-- Meal Type Toggle -->
+                        <div class="bg-slate-100 p-1 rounded-xl flex space-x-1 text-xs">
+                            <button id="meal-type-조식" onclick="setMealType('조식')" class="px-3 py-1 rounded-lg text-slate-600 hover:text-slate-900 transition font-medium">조식</button>
+                            <button id="meal-type-중식" onclick="setMealType('중식')" class="px-3 py-1 rounded-lg bg-noble-navy text-white font-bold shadow-sm transition">중식</button>
+                            <button id="meal-type-석식" onclick="setMealType('석식')" class="px-3 py-1 rounded-lg text-slate-600 hover:text-slate-900 transition font-medium">석식</button>
+                        </div>
+                    </div>
+
+                    <div class="bg-noble-cream/80 rounded-2xl p-5 border border-noble-gold/30">
+                        <div class="flex justify-between items-center mb-3 border-b border-noble-gold/20 pb-2">
+                            <span class="text-sm font-bold text-noble-navy flex items-center font-serif-kr">
+                                <i class="fa-solid fa-award text-xs text-noble-gold mr-1.5"></i>
+                                <span id="meal-title-text">2019년 9월 25일 추천 중식 메뉴</span>
+                            </span>
+                            <span id="calorie-text" class="text-xs font-semibold text-noble-navy bg-amber-100 px-2.5 py-0.5 rounded-full border border-amber-200">
+                                810 kcal
+                            </span>
+                        </div>
+
+                        <ul id="meal-items-list" class="grid grid-cols-2 gap-2 text-sm text-slate-800 font-medium my-4">
+                            <!-- Dynamically filled -->
+                        </ul>
+
+                        <div class="text-[11px] text-slate-500 bg-white p-3 rounded-xl border border-slate-200">
+                            <span class="font-bold text-noble-navy block mb-0.5"><i class="fa-solid fa-leaf text-emerald-600 mr-1"></i>영양 및 원산지 안내:</span>
+                            남궁고 급식실은 친환경 무농약 쌀과 1등급 한우만을 사용합니다. (알레르기 유발물질 표시 완료)
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-4 flex justify-between items-center text-xs">
+                    <button onclick="changeMealDate(-1)" class="text-slate-600 hover:text-noble-gold flex items-center font-medium">
+                        <i class="fa-solid fa-chevron-left mr-1"></i> 이전날
+                    </button>
+                    <span class="text-slate-400">급식실 문의: 02-928-1928</span>
+                    <button onclick="changeMealDate(1)" class="text-slate-600 hover:text-noble-gold flex items-center font-medium">
+                        다음날 <i class="fa-solid fa-chevron-right ml-1"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- 2019 Academic Calendar Widget -->
+            <div id="academic" class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-center mb-6">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 bg-sky-50 text-noble-navy rounded-xl flex items-center justify-center border border-sky-200">
+                                <i class="fa-solid fa-calendar-days text-xl text-noble-gold"></i>
+                            </div>
+                            <div>
+                                <h2 class="text-lg font-bold font-serif-kr text-noble-navy">2019학년도 주요 학사일정</h2>
+                                <p class="text-xs text-slate-500">2019년 2학기 학사 일정표</p>
+                            </div>
+                        </div>
+                        <!-- Month Filter -->
+                        <div class="flex items-center space-x-2">
+                            <button onclick="changeAcademicMonth(-1)" class="p-1.5 text-slate-500 hover:bg-slate-100 rounded-lg"><i class="fa-solid fa-chevron-left text-xs"></i></button>
+                            <span id="calendar-month-year" class="text-xs font-bold font-mono text-noble-navy min-w-[70px] text-center">2019.09</span>
+                            <button onclick="changeAcademicMonth(1)" class="p-1.5 text-slate-500 hover:bg-slate-100 rounded-lg"><i class="fa-solid fa-chevron-right text-xs"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Events List -->
+                    <div id="events-list" class="space-y-3">
+                        <!-- Populated dynamically via JS -->
+                    </div>
+                </div>
+
+                <div class="mt-4 pt-3 border-t border-slate-100 text-right">
+                    <button onclick="alert('2019학년도 연간 전체 학사일정(PDF)이 다운로드되었습니다.');" class="text-xs text-noble-navy font-bold hover:text-noble-gold inline-flex items-center">
+                        <i class="fa-solid fa-file-pdf mr-1 text-rose-700"></i> 2019학년도 연간 학사일정 전체보기 (PDF)
+                    </button>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="bg-noble-navy text-slate-400 text-xs py-12 border-t-2 border-noble-gold mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+            <div class="flex flex-wrap justify-between items-center gap-4 border-b border-slate-800 pb-6">
+                <div class="flex flex-wrap gap-4 text-slate-300 font-medium">
+                    <a href="#" onclick="openSchoolIntroModal()" class="hover:text-noble-gold transition">학교헌장 및 교훈</a>
+                    <span>|</span>
+                    <a href="#" class="hover:text-noble-gold transition">개인정보처리방침</a>
+                    <span>|</span>
+                    <a href="#" class="hover:text-noble-gold transition">남궁학원 이사회</a>
+                    <span>|</span>
+                    <a href="#" class="hover:text-noble-gold transition">남궁대학교 연계안내</a>
+                </div>
+                <div class="text-noble-gold font-serif-kr text-sm font-bold">
+                    南宮高等學校 · Since 1928
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="md:col-span-2 space-y-2">
+                    <p class="font-bold text-slate-200 text-sm font-serif-kr">남궁대학교 사립대학 부설 고등학교</p>
+                    <p>[03000] 서울특별시 종로구 남궁로 1928 (남궁학원 교정) | 대표전화: 02-928-1928</p>
+                    <p>행정실: 02-928-1929 | 교무실: 02-928-1930 | 진학상담실: 02-928-1935</p>
+                    <p class="text-slate-500 pt-2">Copyright © 2019 Namgung University High School. All Rights Reserved.</p>
+                </div>
+                <div class="flex flex-col justify-end md:items-end">
+                    <div class="bg-slate-900 border border-noble-gold/30 rounded-xl p-3 text-center inline-block">
+                        <span class="text-[10px] text-slate-400 block mb-1">서울특별시 교육청 지정</span>
+                        <span class="text-xs text-noble-gold font-bold"><i class="fa-solid fa-award mr-1"></i>2019 최우수 학업역량 수여교</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    
+    <!-- Notice Detail Modal -->
+    <div id="notice-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
+        <div class="bg-white w-full max-w-2xl rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh] border border-noble-gold">
+            <div class="bg-noble-navy text-white p-6 flex justify-between items-start">
+                <div>
+                    <span id="modal-category" class="inline-block px-2.5 py-0.5 bg-noble-gold/20 text-noble-gold text-xs font-semibold rounded-full mb-2">2019 공지</span>
+                    <h3 id="modal-title" class="text-xl font-bold font-serif-kr">공지사항 제목</h3>
+                </div>
+                <button onclick="closeNoticeModal()" class="text-slate-400 hover:text-white text-xl p-1">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            
+            <div class="bg-slate-50 px-6 py-3 border-b border-slate-100 flex justify-between text-xs text-slate-500">
+                <span><i class="fa-regular fa-user mr-1"></i>작성자: <span id="modal-author" class="font-medium text-slate-700">교무처</span></span>
+                <span><i class="fa-regular fa-calendar mr-1"></i>등록일: <span id="modal-date" class="font-medium text-slate-700">2019.09.25</span></span>
+            </div>
+
+            <div class="p-6 overflow-y-auto space-y-4 text-slate-700 text-sm leading-relaxed custom-scrollbar">
+                <div id="modal-content" class="whitespace-pre-line">
+                    내용이 표시됩니다.
+                </div>
+            </div>
+
+            <div class="p-4 border-t border-slate-100 bg-slate-50 flex justify-end">
+                <button onclick="closeNoticeModal()" class="px-5 py-2 bg-noble-navy hover:bg-slate-800 text-white text-xs font-bold rounded-xl transition">
+                    닫기
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- School Intro Modal (교훈 및 역사) -->
+    <div id="school-intro-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
+        <div class="bg-white w-full max-w-3xl rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh] border-2 border-noble-gold">
+            <div class="bg-noble-navy text-white p-6 flex justify-between items-center border-b border-noble-gold/30">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-noble-gold text-noble-navy font-serif-kr font-bold rounded-full flex items-center justify-center">
+                        南宮
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold font-serif-kr text-noble-gold">학교 소개 및 역사</h3>
+                        <p class="text-xs text-slate-300">Namgung University High School</p>
+                    </div>
+                </div>
+                <button onclick="closeSchoolIntroModal()" class="text-slate-400 hover:text-white text-xl p-1">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <div class="p-6 overflow-y-auto space-y-6 text-slate-700 text-sm custom-scrollbar">
+                <!-- Tab Headers inside modal -->
+                <div class="grid grid-cols-2 gap-4 text-center border-b border-slate-200 pb-4">
+                    <div class="bg-noble-cream p-4 rounded-xl border border-noble-gold/30">
+                        <span class="text-xs text-noble-gold font-bold block mb-1">건학 이념 및 교훈</span>
+                        <h4 class="font-serif-kr text-lg font-bold text-noble-navy">誠實 · 創義 · 踐行</h4>
+                    </div>
+                    <div class="bg-noble-cream p-4 rounded-xl border border-noble-gold/30">
+                        <span class="text-xs text-noble-gold font-bold block mb-1">상징</span>
+                        <h4 class="font-serif-kr text-lg font-bold text-noble-navy">校木: 소나무 / 校花: 목련</h4>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-serif-kr text-base font-bold text-noble-navy mb-2 border-l-4 border-noble-gold pl-2">남궁학원 90년 연혁 요약</h4>
+                    <ul class="space-y-2 text-xs text-slate-600">
+                        <li><strong class="text-noble-navy">1928년:</strong> 민족 교육의 기치를 내걸고 남궁학원 설립 (설립자 남궁인 선생)</li>
+                        <li><strong class="text-noble-navy">1954년:</strong> 남궁대학교 부설 고등학교로 개편 인가</li>
+                        <li><strong class="text-noble-navy">1988년:</strong> 첨단 과학 탐구동 및 남궁 학술 도서관 준공</li>
+                        <li><strong class="text-noble-navy">2010년:</strong> 서울시 교육청 선도 자율사립고 지정</li>
+                        <li><strong class="text-noble-navy">2019년:</strong> 2019학년도 대입 서울대 48명, 메디컬 72명 합격으로 사학 최고 명문 입지 견고화</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="p-4 border-t border-slate-100 bg-slate-50 flex justify-end">
+                <button onclick="closeSchoolIntroModal()" class="px-5 py-2 bg-noble-navy hover:bg-slate-800 text-white text-xs font-bold rounded-xl transition">
+                    확인
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Auth Modal -->
+    <div id="auth-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
+        <div class="bg-white w-full max-w-md rounded-2xl shadow-2xl overflow-hidden p-6 space-y-5 border border-noble-gold">
+            <div class="flex justify-between items-center border-b border-slate-100 pb-3">
+                <h3 class="text-lg font-bold font-serif-kr text-noble-navy">남궁 포털 통합 로그인</h3>
+                <button onclick="closeAuthModal()" class="text-slate-400 hover:text-slate-600"><i class="fa-solid fa-xmark text-lg"></i></button>
+            </div>
+
+            <form onsubmit="handleLoginSubmit(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold text-slate-700 mb-1">학번 / 교번 / 학부모 ID</label>
+                    <input type="text" required placeholder="아이디를 입력하세요" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-noble-gold focus:outline-none">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-slate-700 mb-1">비밀번호</label>
+                    <input type="password" required placeholder="비밀번호를 입력하세요" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-noble-gold focus:outline-none">
+                </div>
+                <button type="submit" class="w-full py-2.5 bg-noble-navy hover:bg-slate-800 text-white font-bold text-sm rounded-xl transition shadow">
+                    로그인
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // 2019 데이터 스토어
+        const noticesData2019 = [
+            { id: 1, type: '공지', isPin: true, title: '2019학년도 2학기 1차 지필평가(중간고사) 시행 안내', date: '2019.09.20', author: '교무처', content: '2019학년도 2학기 중간고사 일정 및 과목별 시험 범위를 안내합니다.\n\n- 시험 기간: 2019년 10월 16일(수) ~ 10월 18일(금)\n- 대상: 1, 2, 3학년 전교생\n- 유의사항: 부정행위 방지를 위해 수험표 및 지정 좌석제 실시' },
+            { id: 2, type: '공지', isPin: true, title: '2020학년도 수시모집 원서접수 완료 및 면접고사 안내', date: '2019.09.11', author: '진학상담부', content: '2020학년도 대입 수시모집 원서접수가 차질없이 마감되었습니다.\n\n- 서울대 및 주요대 면접대상자는 진학실 제시 가이드라인에 따라 제시문 면접 시뮬레이션에 참석하시기 바랍니다.' },
+            { id: 3, type: '공지', isPin: false, title: '2019 남궁 학술 탐구 대강연회 개최 (서울대 교수진 초청)', date: '2019.09.05', author: '창의융합부', content: '본교 강당에서 인문·자연 융합 분야 특강이 개최됩니다.' },
+            { id: 4, type: '공지', isPin: false, title: '2019학년도 전국 자율사립고 학업성취도 평가 최우수 선정', date: '2019.08.28', author: '기획실', content: '서울특별시 교육청 평가 결과 본교가 최우수 등급을 받았습니다.' },
+            { id: 5, type: '공지', isPin: false, title: '2019학년도 2학기 도서관 신간 학술 서적 500권 입고', date: '2019.08.20', author: '도서관', content: '학생 탐구활동 지원을 위한 최신 학술 서적이 구비되었습니다.' }
+        ];
+
+        const lettersData2019 = [
+            { id: 101, type: '통신문', isPin: true, title: '[가정통신문] 2019년 10월 학사일정 및 수능 D-50 학생 건강관리', date: '2019.09.23', author: '교무처', content: '학부모님 안녕하십니까. 2020학년도 대학수학능력시험이 50일 앞으로 다가왔습니다. 수험생 건강관리에 유의해주시기 바랍니다.' },
+            { id: 102, type: '통신문', isPin: false, title: '[가정통신문] 2019학년도 2학기 학부모 진학 상담주간 신청 안내', date: '2019.09.15', author: '진학상담부', content: '1:1 맞춤형 대입 컨설팅을 진행합니다. 포털을 통해 사전 예약하시기 바랍니다.' },
+            { id: 103, type: '통신문', isPin: false, title: '[가정통신문] 2019학년도 학교발전기금 운용 현황 보고', date: '2019.09.02', author: '행정실', content: '투명하고 공정한 장학금 지급 및 시설 개선 내역을 보고합니다.' }
+        ];
+
+        const mealsData2019 = {
+            '조식': {
+                kcal: '620 kcal',
+                items: ['유기농 현미밥', '한우 차돌된장찌개', '수제 떡갈비구이', '계란찜', '포기김치', '아침사과']
+            },
+            '중식': {
+                kcal: '810 kcal',
+                items: ['클래식 곤드레밥/양념장', '맑은 대구탕', '1등급 한우 수육', '부추겉절이', '수제 단호박튀김', '샤인머스캣']
+            },
+            '석식': {
+                kcal: '730 kcal',
+                items: ['수제 치즈돈가스', '크림스프/모닝빵', '해물 볶음우동', '수제 피클', '양상추샐러드', '유기농 감귤주스']
+            }
+        };
+
+        const events2019 = {
+            '2019.09': [
+                { date: '09.04 (수)', title: '2020학년도 수능 9월 모의평가 (전국)', category: '수능/평가', isHighlight: true },
+                { date: '09.06 (금) ~ 09.10 (화)', title: '2020 수시모집 원서접수 기간', category: '입시', isHighlight: true },
+                { date: '09.20 (금)', title: '남궁 학술 심포지엄 발표회', category: '교내대회', isHighlight: false },
+                { date: '09.27 (금)', title: '2학기 1차 지필평가 시간표 발표', category: '시험', isHighlight: false }
+            ],
+            '2019.10': [
+                { date: '10.03 (목)', title: '개천절 (국경일)', category: '휴무', isHighlight: false },
+                { date: '10.15 (화)', title: '2019 전국연합학력평가 (고3)', category: '수능/평가', isHighlight: true },
+                { date: '10.16 (수) ~ 10.18 (금)', title: '2학기 중간고사 (지필평가)', category: '시험', isHighlight: true }
+            ],
+            '2019.11': [
+                { date: '11.14 (목)', title: '2020학년도 대학수학능력시험', category: '수능', isHighlight: true },
+                { date: '11.22 (금)', title: '남궁 교내 수학·과학 경시대회', category: '교내대회', isHighlight: false }
+            ]
+        };
+
+        let currentNoticeTab = '공지';
+        let currentMealType = '중식';
+        let currentMonthKey = '2019.09';
+
+        window.addEventListener('DOMContentLoaded', () => {
+            renderNotices();
+            renderMeals();
+            renderEvents();
+        });
+
+        // Notices Switcher
+        function switchNoticeTab(tab) {
+            currentNoticeTab = tab;
+            const tabNoticeBtn = document.getElementById('tab-공지');
+            const tabLetterBtn = document.getElementById('tab-통신문');
+
+            if (tab === '공지') {
+                tabNoticeBtn.className = 'text-lg font-bold font-serif-kr text-noble-navy border-b-2 border-noble-gold pb-2 transition flex items-center';
+                tabLetterBtn.className = 'text-lg font-bold font-serif-kr text-slate-400 hover:text-slate-700 pb-2 transition flex items-center';
+            } else {
+                tabLetterBtn.className = 'text-lg font-bold font-serif-kr text-noble-navy border-b-2 border-noble-gold pb-2 transition flex items-center';
+                tabNoticeBtn.className = 'text-lg font-bold font-serif-kr text-slate-400 hover:text-slate-700 pb-2 transition flex items-center';
+            }
+
+            renderNotices();
+        }
+
+        function renderNotices() {
+            const container = document.getElementById('notice-list-container');
+            const data = currentNoticeTab === '공지' ? noticesData2019 : lettersData2019;
+            document.getElementById('notice-count-badge').innerText = `총 ${data.length}건`;
+
+            container.innerHTML = data.map(item => `
+                <div onclick="openNoticeModal('${item.title}', '${item.content.replace(/\n/g, '\\n')}', '${item.date}', '${item.author}')" 
+                     class="p-3.5 hover:bg-amber-50/50 rounded-xl transition cursor-pointer flex items-center justify-between border border-transparent hover:border-noble-gold/30 group">
+                    <div class="flex items-center space-x-3 overflow-hidden">
+                        ${item.isPin ? `<span class="bg-noble-navy text-noble-gold border border-noble-gold/40 text-[10px] font-bold px-2 py-0.5 rounded flex-shrink-0">주요</span>` : `<span class="bg-slate-100 text-slate-600 text-[10px] font-medium px-2 py-0.5 rounded flex-shrink-0">${item.type}</span>`}
+                        <span class="text-sm font-medium text-slate-800 group-hover:text-noble-navy transition truncate font-serif-kr">${item.title}</span>
+                    </div>
+                    <div class="flex items-center space-x-4 text-xs text-slate-400 flex-shrink-0 ml-2">
+                        <span class="hidden sm:inline">${item.author}</span>
+                        <span>${item.date}</span>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Meal Widget
+        function setMealType(type) {
+            currentMealType = type;
+            ['조식', '중식', '석식'].forEach(t => {
+                const btn = document.getElementById(`meal-type-${t}`);
+                if (t === type) {
+                    btn.className = 'px-3 py-1 rounded-lg bg-noble-navy text-white font-bold shadow-sm transition';
+                } else {
+                    btn.className = 'px-3 py-1 rounded-lg text-slate-600 hover:text-slate-900 transition font-medium';
+                }
+            });
+            renderMeals();
+        }
+
+        function renderMeals() {
+            const meal = mealsData2019[currentMealType];
+            document.getElementById('meal-title-text').innerText = `2019년 9월 25일 추천 ${currentMealType} 메뉴`;
+            document.getElementById('calorie-text').innerText = meal.kcal;
+
+            const listContainer = document.getElementById('meal-items-list');
+            listContainer.innerHTML = meal.items.map(item => `
+                <li class="flex items-center space-x-2 bg-white px-3 py-2 rounded-lg border border-slate-200">
+                    <span class="w-1.5 h-1.5 bg-noble-gold rounded-full"></span>
+                    <span>${item}</span>
+                </li>
+            `).join('');
+        }
+
+        function changeMealDate(days) {
+            const dateDisplay = document.getElementById('current-date-display');
+            if (days > 0) {
+                dateDisplay.innerText = '2019년 9월 26일 (목)';
+            } else {
+                dateDisplay.innerText = '2019년 9월 24일 (화)';
+            }
+            renderMeals();
+        }
+
+        // Academic Calendar
+        function changeAcademicMonth(direction) {
+            const months = ['2019.09', '2019.10', '2019.11'];
+            let idx = months.indexOf(currentMonthKey);
+            idx = (idx + direction + months.length) % months.length;
+            currentMonthKey = months[idx];
+            document.getElementById('calendar-month-year').innerText = currentMonthKey;
+            renderEvents();
+        }
+
+        function renderEvents() {
+            const container = document.getElementById('events-list');
+            const events = events2019[currentMonthKey] || [];
+            
+            container.innerHTML = events.map(evt => `
+                <div class="flex items-center justify-between p-3 rounded-xl border border-slate-200/80 hover:bg-slate-50 transition">
+                    <div class="flex items-center space-x-3">
+                        <span class="text-xs font-bold font-mono ${evt.isHighlight ? 'text-noble-navy bg-amber-100 px-2 py-1 rounded' : 'text-slate-500'}">${evt.date}</span>
+                        <span class="text-sm font-medium text-slate-800 font-serif-kr">${evt.title}</span>
+                    </div>
+                    <span class="text-[11px] px-2 py-0.5 rounded ${evt.isHighlight ? 'bg-noble-navy text-noble-gold font-bold' : 'bg-slate-100 text-slate-600'}">${evt.category}</span>
+                </div>
+            `).join('');
+        }
+
+        // Modals
+        function openNoticeModal(title, content, date, author) {
+            document.getElementById('modal-title').innerText = title;
+            document.getElementById('modal-content').innerText = content;
+            document.getElementById('modal-date').innerText = date;
+            document.getElementById('modal-author').innerText = author;
+            document.getElementById('notice-modal').classList.remove('hidden');
+        }
+
+        function closeNoticeModal() {
+            document.getElementById('notice-modal').classList.add('hidden');
+        }
+
+        function openSchoolIntroModal() {
+            document.getElementById('school-intro-modal').classList.remove('hidden');
+        }
+
+        function closeSchoolIntroModal() {
+            document.getElementById('school-intro-modal').classList.add('hidden');
+        }
+
+        function openAuthModal() {
+            document.getElementById('auth-modal').classList.remove('hidden');
+        }
+
+        function closeAuthModal() {
+            document.getElementById('auth-modal').classList.add('hidden');
+        }
+
+        function handleLoginSubmit(e) {
+            e.preventDefault();
+            alert('남궁 포털 인트라넷 로그인에 성공하였습니다.');
+            closeAuthModal();
+        }
+
+        function toggleMobileMenu() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>
